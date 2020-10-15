@@ -28,7 +28,10 @@ export default class MessageBytes extends Component {
         this.props.message.entries.length - 1
       ];
 
+	try {
       return nextLastEntry.hexData !== curLastEntry.hexData;
+	} catch(err) {return true;  
+		}
     }
     return nextProps.seekTime !== this.props.seekTime;
   }
